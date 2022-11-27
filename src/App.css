@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 
-.complate {
+.done {
   transition: 0.7s;
   text-decoration: line-through;
   color: red;

@@ -10,7 +10,7 @@ export const Task = ({text, handleRemoveItem, id}) => {
 
   return(
     <TaskWrapper onClick={handleToggleClass}>
-      <TaskText className={isComplate ? 'no-complate' : 'complate'}>
+      <TaskText className={isComplate ? null : 'done'}>
         {text}
       </TaskText>
       <TaskDell onClick = { () => handleRemoveItem(id) }>
