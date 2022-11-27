@@ -7,6 +7,12 @@
   pointer-events: none;
 }
 
+.complate {
+  transition: 0.7s;
+  text-decoration: line-through;
+  color: red;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-float infinite 3s ease-in-out;
