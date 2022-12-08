@@ -3,15 +3,21 @@ import { ListWrapper, TasksList } from "./List.styles";
 import { Task } from '../Task/Task'
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { removeTodo } from "../../store/toolkitSlice";
+import { removeTodo, toggleTask } from "../../store/todoSlice";
 
 export const List = () => {
   const todos = useSelector(state => state.toolkit.todos)
   const dispatch = useDispatch()
 
   const handleRemoveItem = (id) => {
-        const taskId = id
-        dispatch(removeTodo(taskId))
+    const taskId = id
+    console.log(taskId)
+    dispatch(removeTodo(taskId))
+  }
+
+  const handleToggleItem = () => {
+    console.log()
+    dispatch(toggleTask())
   }
 
   return (
@@ -19,13 +25,20 @@ export const List = () => {
       <Input />
 
       <TasksList>
-        {todos.map(tasks => 
-          <Task
-            id={tasks.id} 
-            key={tasks.id} 
-            text={tasks.text}
-            handleRemoveItem = { handleRemoveItem }
-          />   
+        {todos.map(task => {
+          if (task.validFilter === false) {
+            return null
+          }
+
+          return (
+            <Task
+              id={task.id} 
+              key={task.id} 
+              text={task.text}
+              handleRemoveItem = { handleRemoveItem }
+              handleToggleItem = { handleToggleItem }
+            />
+          )}
         )}
       </TasksList>
       

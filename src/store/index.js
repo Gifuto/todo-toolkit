@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import toolkitSlice from './toolkitSlice';
+import todoSlice from './todoSlice';
 
 const rootReducer = combineReducers({
-  toolkit: toolkitSlice,
+  toolkit: todoSlice,
 })
 
 export const store = configureStore({ reducer: rootReducer });

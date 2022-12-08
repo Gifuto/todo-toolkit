@@ -1,7 +1,7 @@
 import { StyledInput } from "./Input.styles";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../../store/toolkitSlice";
+import { addTodo } from "../../store/todoSlice";
 
 
 export const Input = () => {
